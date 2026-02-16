@@ -1,0 +1,292 @@
+:root{
+  --bg: #0b1220;
+  --panel: #111a2e;
+  --panel-2: #0f1730;
+  --border: rgba(255,255,255,0.08);
+  --text: #e8eefc;
+  --muted: rgba(232,238,252,0.72);
+  --accent: #6ee7ff;     /* cyan */
+  --accent2: #a78bfa;    /* violet */
+  --card: rgba(255,255,255,0.05);
+
+  --control-bg: rgba(255,255,255,0.06);
+  --control-bg-hover: rgba(255,255,255,0.08);
+  --control-border: rgba(255,255,255,0.12);
+  --menu-bg: #0f1730;
+  --menu-border: rgba(255,255,255,0.12);
+}
+
+body{
+  margin: 0;
+  background:
+    radial-gradient(1200px 800px at 20% 10%, rgba(110,231,255,0.14), transparent 55%),
+    radial-gradient(900px 700px at 85% 25%, rgba(167,139,250,0.12), transparent 50%),
+    var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+.app-root { padding: 0; margin: 0; }
+
+/* LEFT SIDEBAR */
+.sidebar{
+  position: fixed;
+  top: 0; left: 0;
+  width: 300px;
+  height: 100vh;
+  padding: 18px;
+  background: linear-gradient(180deg, rgba(17,26,46,0.98), rgba(15,23,48,0.98));
+  border-right: 1px solid var(--border);
+  box-shadow: 10px 0 30px rgba(0,0,0,0.25);
+}
+
+.sidebar-title{
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: 0.3px;
+  margin-bottom: 10px;
+}
+
+.sidebar-placeholder{
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.45;
+  padding: 12px;
+  background: var(--card);
+  border: 1px dashed rgba(110,231,255,0.35);
+  border-radius: 12px;
+}
+
+/* MAIN CONTENT (right side) */
+.content{
+  margin-left: 300px; /* match sidebar width */
+  padding: 18px 20px;
+}
+
+.header{
+  padding: 8px 0 14px 0;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 14px;
+}
+
+.app-title{
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+}
+
+.app-subtitle{
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+/* Labels */
+label{
+  color: rgba(232,238,252,0.82);
+  font-weight: 700;
+  font-size: 12px;
+  margin-bottom: 6px;
+  display: inline-block;
+}
+
+/* Tabs styling */
+.tabs{
+  margin-top: 10px;
+}
+
+.tab{
+  padding: 10px 14px;
+  font-size: 14px;
+  color: var(--muted);
+  background: transparent;
+  border: 0;
+}
+
+.tab--selected{
+  color: var(--text);
+  font-weight: 800;
+  border-bottom: 2px solid var(--accent);
+}
+
+/* Tab content */
+.tab-content{
+  margin-top: 14px;
+}
+
+.section-title{
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: rgba(232,238,252,0.92);
+}
+
+.section-placeholder{
+  padding: 14px;
+  background: var(--card);
+  border: 1px dashed rgba(167,139,250,0.35);
+  border-radius: 14px;
+  color: var(--muted);
+}
+
+/* Bootstrap cards darker */
+.card, .dbc{
+  background-color: transparent;
+}
+
+.panel-card{
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+}
+
+.kpi-card{
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+}
+
+.kpi-title{
+  font-size: 12px;
+  color: rgba(232,238,252,0.75);
+  margin-bottom: 6px;
+}
+
+.kpi-value{
+  font-size: 20px;
+  font-weight: 800;
+  color: rgba(232,238,252,0.95);
+}
+
+.kpi-subtitle{
+  margin-top: 4px;
+  font-size: 11px;
+  color: rgba(232,238,252,0.60);
+}
+
+.sidebar-card{
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+}
+
+.sidebar-section-title{
+  font-weight: 800;
+  font-size: 13px;
+  margin-bottom: 10px;
+  color: rgba(232,238,252,0.85);
+}
+
+.panel-fixed{
+  min-height: 420px;
+}
+
+.graph-fixed{
+  height: 340px;
+}
+
+.graph-fixed .js-plotly-plot,
+.graph-fixed .plot-container{
+  height: 340px !important;
+}
+
+/* ----------------------------- */
+/* dcc.Dropdown (react-select)   */
+/* ----------------------------- */
+
+/* The closed control */
+.Select-control{
+  background: var(--control-bg) !important;
+  border: 1px solid var(--control-border) !important;
+  border-radius: 12px !important;
+  box-shadow: none !important;
+}
+.Select-control:hover{
+  background: var(--control-bg-hover) !important;
+  border-color: rgba(110,231,255,0.25) !important;
+}
+
+/* Placeholder + selected value text */
+.Select-placeholder,
+.Select--single .Select-value-label{
+  color: rgba(232,238,252,0.80) !important;
+}
+
+/* Input text when searching */
+.Select-input > input{
+  color: rgba(232,238,252,0.92) !important;
+}
+
+/* Dropdown arrow */
+.Select-arrow{
+  border-top-color: rgba(232,238,252,0.70) !important;
+}
+.Select-arrow-zone:hover .Select-arrow{
+  border-top-color: rgba(232,238,252,0.92) !important;
+}
+
+/* Multi selected chips */
+.Select--multi .Select-value{
+  background: rgba(167,139,250,0.18) !important;
+  border: 1px solid rgba(167,139,250,0.35) !important;
+  color: rgba(232,238,252,0.92) !important;
+  border-radius: 10px !important;
+}
+.Select--multi .Select-value-label{
+  color: rgba(232,238,252,0.92) !important;
+}
+.Select--multi .Select-value-icon{
+  color: rgba(232,238,252,0.85) !important;
+}
+.Select--multi .Select-value-icon:hover{
+  color: rgba(232,238,252,1) !important;
+  background: transparent !important;
+}
+
+/* Menu container */
+.Select-menu-outer{
+  background: var(--menu-bg) !important;
+  border: 1px solid var(--menu-border) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 14px 30px rgba(0,0,0,0.35) !important;
+  overflow: hidden;
+  z-index: 9999 !important;
+}
+
+/* Options */
+.Select-option{
+  background: transparent !important;
+  color: rgba(232,238,252,0.88) !important;
+  padding: 10px 12px !important;
+}
+.Select-option.is-focused{
+  background: rgba(110,231,255,0.10) !important;
+  color: rgba(232,238,252,0.95) !important;
+}
+.Select-option.is-selected{
+  background: rgba(167,139,250,0.14) !important;
+  color: rgba(232,238,252,0.98) !important;
+}
+
+/* Search box inside menu (some versions) */
+.Select-menu-outer input{
+  color: rgba(232,238,252,0.92) !important;
+}
+
+/* ----------------------------- */
+/* Dash DataTable dark tuning     */
+/* ----------------------------- */
+.dash-table-container .dash-spreadsheet-container .dash-spreadsheet-inner{
+  border-color: rgba(255,255,255,0.10) !important;
+}
+
+.dash-table-container .dash-spreadsheet-container .dash-spreadsheet-inner th{
+  background-color: rgba(255,255,255,0.06) !important;
+  color: rgba(232,238,252,0.92) !important;
+  border-color: rgba(255,255,255,0.10) !important;
+}
+
+.dash-table-container .dash-spreadsheet-container .dash-spreadsheet-inner td{
+  background-color: rgba(0,0,0,0.20) !important;
+  color: rgba(232,238,252,0.88) !important;
+  border-color: rgba(255,255,255,0.08) !important;
+}
